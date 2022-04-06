@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import style from './Auth.module.css'
-import { useNavigate } from 'react-router-dom'
 import { loginUser } from '../../apiCalls'
 import { useAuth } from '../../context'
 import { checkInputs } from '../../formValidation/formValidation'
