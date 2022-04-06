@@ -1,0 +1,9 @@
+@import url('react-toastify/dist/ReactToastify.css');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--default-color);
+}
