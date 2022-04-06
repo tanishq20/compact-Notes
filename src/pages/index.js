@@ -1,0 +1,6 @@
+export { Home } from './home/Home'
+export { Login } from './login/Login'
+export { Signup } from './signup/Signup'
+export { Notes } from './notes/Notes'
+export { Archive } from './archive/Archive'
+export { Trash } from './trash/Trash'

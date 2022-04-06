@@ -1,0 +1,9 @@
+.error_num {
+  font-size: var(--font-s-3xl);
+  font-weight: var(--font-w-bold);
+  color: var(--grey);
+}
+
+.error_msg {
+  color: var(--grey);
+}
