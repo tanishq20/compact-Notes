@@ -1,5 +1,5 @@
-import { v4 as uuid } from "uuid";
-import bcyrpt from "bcryptjs";
+import { v4 as uuid } from 'uuid'
+import bcyrpt from 'bcryptjs'
 
 /**
  * User Database can be added here.
@@ -9,23 +9,30 @@ import bcyrpt from "bcryptjs";
 export const users = [
   {
     _id: uuid(),
-    firstName: "Adarsh",
-    lastName: "Balika",
-    email: "adarshbalika@gmail.com",
-    password: bcyrpt.hashSync("adarshBalika123", 5),
+    firstName: 'Adarsh',
+    lastName: 'Balika',
+    email: 'adarshbalika@gmail.com',
+    password: bcyrpt.hashSync('adarshBalika123', 5),
   },
   {
     _id: uuid(),
-    firstName: "Soham",
-    lastName: "Shah",
-    email: "sohamshah@gmail.com",
-    password: bcyrpt.hashSync("sohamShah123", 5),
+    firstName: 'Soham',
+    lastName: 'Shah',
+    email: 'sohamshah@gmail.com',
+    password: bcyrpt.hashSync('sohamShah123', 5),
   },
   {
     _id: uuid(),
-    firstName: "Shubham",
-    lastName: "Soni",
-    email: "shubhamsoni@gmail.com",
-    password: bcyrpt.hashSync("shubhamSoni123", 5),
+    firstName: 'Shubham',
+    lastName: 'Soni',
+    email: 'shubhamsoni@gmail.com',
+    password: bcyrpt.hashSync('shubhamSoni123', 5),
   },
-];
+  {
+    _id: uuid(),
+    firstName: 'Guest',
+    lastName: 'guest',
+    email: 'guest@gmail.com',
+    password: bcyrpt.hashSync('Guest123456', 5),
+  },
+]
