@@ -1,0 +1,69 @@
+.auth_wrapper {
+  max-width: 50rem;
+  margin: 2rem auto;
+  background-color: var(--default-hover);
+  box-shadow: 0 0 5px rgb(0 0 0 / 60%);
+  padding: 3rem;
+}
+
+.auth_body {
+  gap: 2rem;
+}
+
+.mt2 {
+  margin-top: 2rem;
+}
+
+.auth_head {
+  font-size: var(--font-s-xl);
+  font-weight: var(--font-w-semibold);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.form_container {
+  gap: 1.5rem;
+}
+
+.input_field {
+  border: 3px solid var(--grey);
+}
+
+.input_field:focus {
+  border: 3px solid var(--primary-color);
+}
+
+.auth_form_link {
+  font-size: var(--font-s-base);
+  font-weight: var(--font-w-medium);
+  color: var(--active-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.auth_form_link:hover {
+  color: var(--active-hover);
+}
+
+.auth_form_ask {
+  font-size: var(--font-s-base);
+  font-weight: var(--font-w-medium);
+  color: var(--white);
+}
+
+.auth_form_ask_link {
+  font-size: var(--font-s-base);
+  font-weight: var(--font-w-medium);
+  color: var(--text-color);
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+.auth_form_ask_link:hover {
+  color: var(--active-color);
+}
+
+.password_icon {
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--active-color);
+}
