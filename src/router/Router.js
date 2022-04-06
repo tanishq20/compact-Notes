@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
+import { Error404 } from '../components'
 import { Archive, Home, Login, Signup, Trash } from '../pages'
 
 export const Router = () => {
@@ -9,6 +10,7 @@ export const Router = () => {
       <Route path='/signup' element={<Signup />}></Route>
       <Route path='/archive' element={<Archive />}></Route>
       <Route path='/trash' element={<Trash />}></Route>
+      <Route path='*' element={<Error404 />}></Route>
     </Routes>
   )
 }

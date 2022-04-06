@@ -7,3 +7,15 @@ html {
 body {
   background-color: var(--default-color);
 }
+
+.global-redirect-btn {
+  font-size: var(--font-s-md);
+  font-weight: var(--font-w-medium);
+  color: var(--text-color);
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+
+.global-redirect-btn:hover {
+  color: var(--active-color);
+}
