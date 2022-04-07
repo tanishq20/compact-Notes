@@ -9,7 +9,7 @@ export const Notes = () => {
   const { authState } = useAuth()
   const { userLogin } = authState
 
-  const { notesState } = useNotes()
+  const { notesState, setNote, defaultNotes } = useNotes()
   const { notes } = notesState
 
   return (
@@ -24,7 +24,7 @@ export const Notes = () => {
                   <div className='position-relative'>
                     <button
                       className='dismiss-btn'
-                      onClick={() => setToggleNewNoteCard((prev) => !prev)}
+                      onClick={() => setToggleNewNoteCard(false)}
                     >
                       <i className='fas fa-times-circle dismiss-btn-icon'></i>
                     </button>
@@ -34,7 +34,10 @@ export const Notes = () => {
                   <div className='d-flex justify-content-center align-items-center'>
                     <button
                       className='btn btn-primary'
-                      onClick={() => setToggleNewNoteCard((prev) => !prev)}
+                      onClick={() => {
+                        setToggleNewNoteCard(true)
+                        setNote(defaultNotes)
+                      }}
                     >
                       Create New Note
                     </button>
@@ -47,6 +50,7 @@ export const Notes = () => {
                       <Notecard
                         key={noteDetails._id}
                         noteDetails={noteDetails}
+                        setToggleNewNoteCard={setToggleNewNoteCard}
                       />
                     ))}
                   </>

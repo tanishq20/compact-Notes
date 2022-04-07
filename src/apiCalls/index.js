@@ -1,3 +1,7 @@
 export { signupUser } from './auth/signupUser'
 export { loginUser } from './auth/loginUser'
 export { addNewNotes } from './notes/addNewNotes'
+export { deleteNotes } from './notes/deleteNotes'
+export { editNotes } from './notes/editNotes'
+export { deleteNotesFromTrash } from './notes/deleteNotesFromTrash'
+export { restoreNotesFromTrash } from './notes/restoreNotesFromTrash'
