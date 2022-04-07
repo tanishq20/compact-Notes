@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import {
   deleteNotes,
@@ -5,22 +6,34 @@ import {
   restoreNotesFromTrash,
 } from '../../../apiCalls'
 import { useNotes } from '../../../context'
+import { ColorPallete } from '../../colorPallete/ColorPallete'
 import style from './NoteCard.module.css'
 export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
   const { _id, title, label, priority, noteBody, date } = noteDetails
 
-  const { setNote, notesDispatch } = useNotes()
+  const { setNote, notesDispatch, defaultNotes } = useNotes()
 
   const { pathname } = useLocation()
+
+  const [toggleColor, setToggleColor] = useState(false)
 
   const handleEditNotes = (noteDetails) => {
     setNote({ ...noteDetails, isEditing: (noteDetails.isEditing = true) })
     setToggleNewNoteCard(true)
   }
 
+  const handleChangeColor = (noteDetails, color) => {
+    console.log(noteDetails)
+    setNote({ ...noteDetails, bgColor: (noteDetails.bgColor = color) })
+    setNote({ ...defaultNotes })
+  }
+
   return (
     <div>
-      <div className={`${style.saved_notes_wrapper} rounded-5`}>
+      <div
+        className={`${style.saved_notes_wrapper} rounded-5`}
+        style={{ backgroundColor: noteDetails.bgColor }}
+      >
         <div className='d-flex justify-content-between align-items-center'>
           <div className='d-flex gap-1'>
             <span className={style.notes_tag}>{label}</span>
@@ -45,8 +58,16 @@ export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
           </div>
           {pathname === '/notes' && (
             <div className='d-flex gap-1'>
-              <button className='btn btn-primary btn-float btn-icon'>
+              <button
+                className='btn btn-primary btn-float btn-icon position-relative'
+                onClick={() => setToggleColor((prev) => !prev)}
+              >
                 <i className='fa-solid fa-palette btn-icon-size'></i>
+                {toggleColor && (
+                  <ColorPallete
+                    passColor={(color) => handleChangeColor(noteDetails, color)}
+                  />
+                )}
               </button>
               <button className='btn btn-primary btn-float btn-icon'>
                 <i className='fas fa-regular fa-tag  btn-icon-size' />

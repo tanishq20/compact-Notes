@@ -1,0 +1,14 @@
+.color-pallete-container {
+  height: 8rem;
+  width: 22rem;
+  top: 5rem;
+  margin: 1rem;
+  background-color: white;
+}
+
+.color-showcase {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+}
