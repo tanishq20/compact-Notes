@@ -9,7 +9,7 @@ export const NotesProvider = ({ children }) => {
     label: '',
     priority: '',
     noteBody: '',
-    bgColor: '#21272d',
+    bgColor: '#ffffff',
     isPinned: false,
     isEditing: false,
     date: new Date().toLocaleDateString(),
