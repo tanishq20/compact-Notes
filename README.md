@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/tanishq20)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://github.com/tanishq20)
+[![GitHub forks](https://img.shields.io/github/forks/saswatamcode/the_shoppies?style=social)](https://github.com/tanishq20/compact-Notes/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/saswatamcode/the_shoppies?style=social)](https://github.com/tanishq20/compact-Notes/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/saswatamcode/the_shoppies.svg)](https://github.com/tanishq20/compact-Notes/issues)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# <p align="center">Compact-Notes</p>
 
-## Available Scripts
+<p align="center">
+    <img src="https://ik.imagekit.io/tanishq20/assets/logo/logo_9hi_XlJ7k.png?ik-sdk-version=javascript-1.4.3&updatedAt=1645964002032" />
+</p>
 
-In the project directory, you can run:
+### <div align="center"> All In One Compact Notes
 
-### `yarn start`
+It helps you to Remember everything and tackle any project with your notes, tasks, and schedule all in one place.</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<hr />
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Live Demo
 
-### `yarn test`
+https://compact-notes.vercel.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<hr />
 
-### `yarn build`
+# Technologies used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ReactJS
+- JavaScript
+- Compact UI Component Library
+- CSS
+- JWT for authentication
+- Mockbee for mock backend
+- Vercel for Deployment
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<hr />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Overview
 
-### `yarn eject`
+- [Landing Page](https://compact-notes.vercel.app/)
+- [Notes Page](https://compact-notes.vercel.app/notes)
+- [Trash Page](https://compact-notes.vercel.app/trash)
+- [Archive Page](https://compact-notes.vercel.app/archive)
+- [Login Page](https://compact-notes.vercel.app/login)
+- [Signup Page](https://compact-notes.vercel.app/signup)
+<hr />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Website Showcase
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://ik.imagekit.io/tanishq20/note_submission/home_-2gEijZMg.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649355848190)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![image](https://ik.imagekit.io/tanishq20/note_submission/signup_AgvHivwJ2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649355848218)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![image](https://ik.imagekit.io/tanishq20/note_submission/login_A6T7h0Z_z.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649355846517)
 
-## Learn More
+![image](https://ik.imagekit.io/tanishq20/note_submission/notecard_xTo36o8t6.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649355845539)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image](https://ik.imagekit.io/tanishq20/note_submission/colorcard_d1PO584jg.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649355847965)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![image](https://ik.imagekit.io/tanishq20/note_submission/trash_1P59X8Ph-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1649355844962)
 
-### Code Splitting
+# How to Contribute to this repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Fork this repo
+2. Clone the repo using `git clone <repo-link>`
+3. Make a new branch using `git checkout -b <branch-name>`
+4. After making changes, add your files using `git add .`
+5. Commit your files for push using `git commit -m "commit-message"`
+6. Push these changes to your fork using `git push origin <branch-name>`
+7. Create a pull request to the main repo.
 
-### Analyzing the Bundle Size
+## Things to keep in mind before submitting a PR:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Make sure your branches are up to date with the master branch of the main repo.
+- Add the upstream repo by using `git remote add upstream <upstream-repo-link>`
+- Fetch the latest commit details using `git fetch upstream` and merge them using `git merge upstream/master master`
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#top">back to top</a>)</p>
