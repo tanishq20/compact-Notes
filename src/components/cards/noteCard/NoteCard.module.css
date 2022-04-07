@@ -1,0 +1,41 @@
+.saved_notes_wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: var(--font-s-lg);
+  width: 100%;
+  color: var(--secondary-color);
+  background-color: var(--white);
+  margin: auto;
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+.notes_tag {
+  width: max-content;
+  background-color: var(--default-color);
+  color: var(--white);
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: var(--font-s-md);
+}
+
+.notes_title {
+  font-size: var(--fonr-s-lg);
+  font-weight: var(--font-w-bold);
+  color: var(--black);
+}
+
+.notes_body {
+  font-size: var(--font-s-xl);
+  font-weight: var(--font-w-semibold);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.notes_date {
+  font-size: var(--font-s-base);
+  font-weight: var(--font-w-extra);
+  color: var(--default-color);
+}

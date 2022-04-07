@@ -1,5 +1,9 @@
-import { AuthProvider } from '../context'
+import { AuthProvider, NotesProvider } from '../context'
 
 export const Provider = ({ children }) => {
-  return <AuthProvider>{children}</AuthProvider>
+  return (
+    <AuthProvider>
+      <NotesProvider>{children}</NotesProvider>
+    </AuthProvider>
+  )
 }
