@@ -1,12 +1,5 @@
-import {
-  createContext,
-  useContext,
-  useReducer,
-  useState,
-  useEffect,
-} from 'react'
+import { createContext, useContext, useReducer, useState } from 'react'
 import { notesReducer } from '../../reducer'
-import { useAuth } from '../../context'
 
 const NotesContext = createContext()
 
@@ -22,11 +15,7 @@ export const NotesProvider = ({ children }) => {
     date: new Date().toLocaleDateString(),
   }
 
-  const { authState } = useAuth()
-  const { userLogin } = authState
-
   const [note, setNote] = useState(defaultNotes)
-  console.log(note)
 
   const [notesState, notesDispatch] = useReducer(notesReducer, {
     notes: [],
@@ -34,7 +23,6 @@ export const NotesProvider = ({ children }) => {
     archiveNotes: [],
     trashNotes: [],
   })
-  console.log(notesState.notes)
 
   return (
     <NotesContext.Provider

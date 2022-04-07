@@ -33,7 +33,6 @@ export const NewNoteCard = ({ setToggleNewNoteCard }) => {
 
   const handleNoteChange = (e) => {
     const { name, value } = e.target
-    console.log(name, value)
     setNote({ ...note, [name]: value })
   }
 

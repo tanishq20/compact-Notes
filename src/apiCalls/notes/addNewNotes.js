@@ -10,7 +10,6 @@ export const addNewNotes = async (note, notesDispatch) => {
         headers: { authorization: localStorage.getItem('encodedToken') },
       }
     )
-    console.log(response)
     if (response.status === 201) {
       Toast('Successfully added new note.', 'success')
       notesDispatch({ type: 'ADD_NEW_NOTE', payload: response.data.notes })
