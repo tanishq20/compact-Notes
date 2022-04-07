@@ -1,4 +1,5 @@
 @import url('react-toastify/dist/ReactToastify.css');
+@import url('react-quill/dist/quill.snow.css');
 
 html {
   scroll-behavior: smooth;
@@ -6,6 +7,35 @@ html {
 
 body {
   background-color: var(--default-color);
+}
+
+.notes-page {
+  max-width: 100%;
+}
+
+.notes-wrapper {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+  padding: 2rem 2rem 0 2rem;
+  height: 100%;
+}
+
+.notes-showcase {
+  background-color: var(--default-light);
+  margin: auto;
+  width: 100%;
+}
+
+.notes-showcase-items {
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.notes-section-change {
+  background-color: var(--white);
+  max-width: 100%;
+  height: 2px;
 }
 
 .global-redirect-btn {
@@ -18,4 +48,31 @@ body {
 
 .global-redirect-btn:hover {
   color: var(--active-color);
+}
+
+.md-icon {
+  font-size: var(--font-s-md);
+}
+
+.ql-editor {
+  font-size: var(--font-s-xl);
+}
+
+.dismiss-btn {
+  color: var(--grey);
+}
+
+.dismiss-btn:hover {
+  color: var(--default-hover);
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
+.category-heading {
+  text-align: center;
+  font-size: var(--font-s-xl);
+  color: var(--text-color);
+  margin: 2rem;
 }

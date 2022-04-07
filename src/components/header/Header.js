@@ -31,13 +31,25 @@ export const Header = () => {
       <nav className={`header-nav ${style.header_nav}`}>
         <ul className={`header-list ${style.header_list}`}>
           {userLogin ? (
-            <div
-              className={`header-item ${style.header_item} d-flex flex-col align-items-center justify-content-center`}
-            >
-              <button className='btn btn-primary' onClick={logoutClickHandler}>
-                Logout
-              </button>
-            </div>
+            <>
+              <div
+                className={`header-item ${style.header_item} d-flex flex-col align-items-center justify-content-center`}
+              >
+                <button
+                  className='btn btn-primary'
+                  onClick={logoutClickHandler}
+                >
+                  Logout
+                </button>
+              </div>
+              <div
+                className={`header-item ${style.header_item} d-flex flex-col align-items-center justify-content-center`}
+              >
+                <Link to={'/notes'}>
+                  <button className='btn btn-primary'>Notes</button>
+                </Link>
+              </div>
+            </>
           ) : (
             <Link
               to={'/login'}
