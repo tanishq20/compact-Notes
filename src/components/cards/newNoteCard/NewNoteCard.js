@@ -1,7 +1,7 @@
 import style from './NewNoteCard.module.css'
 import ReactQuill from 'react-quill'
 import { useNotes } from '../../../context'
-import { addNewNotes } from '../../../apiCalls'
+import { addNewNotes, editNotes } from '../../../apiCalls'
 
 export const NewNoteCard = ({ setToggleNewNoteCard }) => {
   const formats = [
@@ -38,9 +38,11 @@ export const NewNoteCard = ({ setToggleNewNoteCard }) => {
 
   const handleNewNoteSubmit = (e) => {
     e.preventDefault()
-    addNewNotes(note, notesDispatch)
+    note.isEditing
+      ? editNotes(note, notesDispatch)
+      : addNewNotes(note, notesDispatch)
     setNote({ ...defaultNotes })
-    setToggleNewNoteCard((prev) => !prev)
+    setToggleNewNoteCard(false)
   }
 
   return (
@@ -166,7 +168,7 @@ export const NewNoteCard = ({ setToggleNewNoteCard }) => {
               />
             </div>
             <button className='btn btn-primary' type='submit'>
-              Add Note
+              {note.isEditing ? 'Update Note' : 'Add Note'}
             </button>
           </div>
         </form>

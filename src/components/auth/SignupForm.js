@@ -198,7 +198,7 @@ export const SignupForm = () => {
                 className={`${style.input_field} input-field`}
                 required
               />
-              <div onClick={() => setShowPassword((prev) => !prev)}>
+              <div onClick={() => setShowPassword(true)}>
                 {showPassword ? (
                   <i
                     className={`fa-solid fa-eye-slash ${style.password_icon}`}
@@ -244,7 +244,7 @@ export const SignupForm = () => {
                 className={`${style.input_field} input-field`}
                 required
               />
-              <div onClick={() => setShowConfirmPassword((prev) => !prev)}>
+              <div onClick={() => setShowConfirmPassword(true)}>
                 {showConfirmPassword ? (
                   <i
                     className={`fa-solid fa-eye-slash ${style.password_icon}`}
