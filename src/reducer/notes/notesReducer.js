@@ -31,6 +31,28 @@ export const notesReducer = (state, action) => {
           ...state.trashNotes.filter((item) => item._id !== action.payload),
         ],
       }
+    case 'ADD_ARCHIVE':
+      return {
+        ...state,
+        notes: action.payload.notes,
+        archiveNotes: action.payload.archives,
+      }
+    case 'RESTORE_FROM_ARCHIVE':
+      return {
+        ...state,
+        notes: action.payload.notes,
+        archiveNotes: action.payload.archives,
+      }
+    case 'DELETE_ARCHIVE_NOTE':
+      return { ...state, archiveNotes: action.payload }
+    case 'CLEAR_LOCAL_NOTES':
+      return {
+        ...state,
+        notes: [],
+        pinnedNotes: [],
+        archiveNotes: [],
+        trashNotes: [],
+      }
     default:
       return { ...state }
   }
