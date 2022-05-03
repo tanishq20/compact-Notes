@@ -12,7 +12,7 @@ import { useNotes } from '../../../context'
 import { ColorPallete } from '../../../components'
 import style from './NoteCard.module.css'
 export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
-  const { _id, title, label, priority, noteBody, date } = noteDetails
+  const { _id, title, label, priority, noteBody, timestamp } = noteDetails
 
   const { setNote, notesDispatch } = useNotes()
 
@@ -59,7 +59,7 @@ export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
         </div>
         <div className='d-flex justify-content-between align-items-center'>
           <div>
-            <p className={style.notes_date}>Created on: {date}</p>
+            <p className={style.notes_date}>Created on: {timestamp}</p>
           </div>
           {pathname === '/notes' && (
             <div className='d-flex gap-1'>

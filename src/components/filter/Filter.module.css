@@ -1,0 +1,77 @@
+.filter_wrapper {
+  max-width: 80%;
+  width: 100%;
+  margin: auto;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.filter_showcase {
+  color: var(--off-white);
+  background-color: var(--default-hover);
+  padding: 2rem;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 0 5px rgb(0 0 0 / 60%);
+  margin: auto;
+  border-radius: 5px;
+}
+
+.filter_heading_left,
+.filter_heading_right {
+  font-size: var(--font-s-md);
+  padding-bottom: 8px;
+}
+
+.filter_heading_left {
+  font-weight: var(--font-w-medium);
+  color: var(--text-color);
+}
+
+.filter_heading_right {
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: var(--font-w-medium);
+  color: var(--primary-400);
+  transition: all 0.3s ease-in-out;
+}
+
+.filter_heading_right:hover {
+  color: var(--active-color);
+}
+
+.filter_content {
+  max-height: calc(100vh - 5.5rem);
+}
+
+.filter_subcontent {
+  padding: 1rem 0.5rem;
+}
+
+.filter_subcontent_heading {
+  font-size: var(--font-s-md);
+  font-weight: var(--font-w-medium);
+  color: var(--active-color);
+  padding: 5px 0;
+}
+
+.filter_price {
+  font-size: var(--font-s-lg);
+  font-weight: var(--font-w-medium);
+  padding: 5px 0;
+  color: var(--white);
+}
+
+.filter_category,
+.filter_rating,
+.filter_sorting,
+.filter_availability {
+  gap: 0.8rem;
+}
+
+.input_selector_label {
+  color: var(--white);
+  font-weight: var(--font-w-medium);
+}
