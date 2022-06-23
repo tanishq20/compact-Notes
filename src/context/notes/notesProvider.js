@@ -11,7 +11,7 @@ export const NotesProvider = ({ children }) => {
     noteBody: '',
     isPinned: false,
     isEditing: false,
-    date: new Date().toLocaleDateString(),
+    timestamp: new Date().toLocaleString(),
   }
 
   const [note, setNote] = useState(defaultNotes)

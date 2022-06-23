@@ -1,0 +1,33 @@
+.header_src {
+  max-width: 80%;
+  width: 100%;
+}
+
+.header_src_input {
+  width: 100%;
+  border: 3px solid var(--secondary-hover);
+  padding: 5px;
+  max-height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  color: var(--secondary-400);
+  font-size: var(--font-s-base);
+  font-weight: var(--font-w-medium);
+  transition: all 0.3s ease-in;
+}
+
+.header_src_input:focus {
+  color: var(--secondary-color);
+}
+
+.header_src_btn {
+  max-height: 36px;
+  border: 1px solid var(--secondary-hover);
+  background-color: var(--secondary-hover);
+  color: var(--white);
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: var(--font-s-xl);
+  padding: 0.8rem;
+}

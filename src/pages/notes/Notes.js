@@ -1,16 +1,25 @@
 import { useState } from 'react'
-import { Sidebar, NewNoteCard, Notecard } from '../../components'
-import { useAuth, useNotes } from '../../context'
+import {
+  Sidebar,
+  NewNoteCard,
+  Notecard,
+  Search,
+  Filter,
+} from '../../components'
+import { useAuth, useFilter, useNotes } from '../../context'
 import { Link } from 'react-router-dom'
 
 export const Notes = () => {
   const [toggleNewNoteCard, setToggleNewNoteCard] = useState(false)
+  const [toggleFilter, setToggleFilter] = useState(false)
 
   const { authState } = useAuth()
   const { userLogin } = authState
 
   const { notesState, setNote, defaultNotes } = useNotes()
   const { notes } = notesState
+
+  const { filteredNotes } = useFilter()
 
   return (
     <>
@@ -36,6 +45,7 @@ export const Notes = () => {
                       className='btn btn-primary'
                       onClick={() => {
                         setToggleNewNoteCard(true)
+                        setToggleFilter(false)
                         setNote(defaultNotes)
                       }}
                     >
@@ -46,7 +56,30 @@ export const Notes = () => {
                 {notes[0] && (
                   <>
                     <p className='category-heading'>My Notes</p>
-                    {notes?.map((noteDetails) => (
+                    <div className='d-flex align-items-center justify-content-center gap-1'>
+                      <Search />
+                      <button
+                        className='btn btn-secondary'
+                        onClick={() => {
+                          setToggleFilter(true)
+                          setToggleNewNoteCard(false)
+                        }}
+                      >
+                        Filter <i class='fa-solid fa-filter btn-icon-size'></i>
+                      </button>
+                    </div>
+                    {toggleFilter && (
+                      <div className='position-relative'>
+                        <button
+                          className='dismiss-btn'
+                          onClick={() => setToggleFilter(false)}
+                        >
+                          <i className='fas fa-times-circle dismiss-btn-icon'></i>
+                        </button>
+                        <Filter />
+                      </div>
+                    )}
+                    {filteredNotes?.map((noteDetails) => (
                       <Notecard
                         key={noteDetails._id}
                         noteDetails={noteDetails}
