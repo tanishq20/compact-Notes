@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useAuth } from '../../context'
+import { useAuth, useNotes } from '../../context'
 import { Toast } from '../../components'
 import style from './Header.module.css'
 
@@ -7,10 +7,13 @@ export const Header = () => {
   const { authState, authDispatch } = useAuth()
   const { userLogin } = authState
 
+  const { notesDispatch } = useNotes()
+
   const logoutClickHandler = () => {
     localStorage.removeItem('encodedToken')
     localStorage.removeItem('firstName')
     authDispatch({ type: 'GET_LOGOUT_SUCCESS' })
+    notesDispatch({ type: 'CLEAR_LOCAL_NOTES' })
     Toast('Logout Successfull', 'success')
   }
 

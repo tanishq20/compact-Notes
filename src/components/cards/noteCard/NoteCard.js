@@ -4,14 +4,17 @@ import {
   deleteNotes,
   deleteNotesFromTrash,
   restoreNotesFromTrash,
+  addNotesToArchive,
+  restoreNotesFromArchive,
+  deleteNotesFromArchive,
 } from '../../../apiCalls'
 import { useNotes } from '../../../context'
-import { ColorPallete } from '../../colorPallete/ColorPallete'
+import { ColorPallete } from '../../../components'
 import style from './NoteCard.module.css'
 export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
-  const { _id, title, label, priority, noteBody, date } = noteDetails
+  const { _id, title, label, priority, noteBody, timestamp } = noteDetails
 
-  const { setNote, notesDispatch, defaultNotes } = useNotes()
+  const { setNote, notesDispatch } = useNotes()
 
   const { pathname } = useLocation()
 
@@ -22,17 +25,19 @@ export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
     setToggleNewNoteCard(true)
   }
 
-  const handleChangeColor = (noteDetails, color) => {
-    console.log(noteDetails)
-    setNote({ ...noteDetails, bgColor: (noteDetails.bgColor = color) })
-    setNote({ ...defaultNotes })
+  const handleChangeColor = (color) => {
+    localStorage.setItem(_id, color)
   }
 
   return (
     <div>
       <div
         className={`${style.saved_notes_wrapper} rounded-5`}
-        style={{ backgroundColor: noteDetails.bgColor }}
+        style={{
+          backgroundColor: localStorage.getItem(_id)
+            ? localStorage.getItem(_id)
+            : '#ffffff',
+        }}
       >
         <div className='d-flex justify-content-between align-items-center'>
           <div className='d-flex gap-1'>
@@ -54,7 +59,7 @@ export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
         </div>
         <div className='d-flex justify-content-between align-items-center'>
           <div>
-            <p className={style.notes_date}>Created on: {date}</p>
+            <p className={style.notes_date}>Created on: {timestamp}</p>
           </div>
           {pathname === '/notes' && (
             <div className='d-flex gap-1'>
@@ -65,14 +70,17 @@ export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
                 <i className='fa-solid fa-palette btn-icon-size'></i>
                 {toggleColor && (
                   <ColorPallete
-                    passColor={(color) => handleChangeColor(noteDetails, color)}
+                    passColor={(color) => handleChangeColor(color)}
                   />
                 )}
               </button>
               <button className='btn btn-primary btn-float btn-icon'>
                 <i className='fas fa-regular fa-tag  btn-icon-size' />
               </button>
-              <button className='btn btn-primary btn-float btn-icon'>
+              <button
+                className='btn btn-primary btn-float btn-icon'
+                onClick={() => addNotesToArchive(noteDetails, notesDispatch)}
+              >
                 <i className='fas fa-regular fa-box-archive btn-icon-size' />
               </button>
               <button
@@ -89,6 +97,24 @@ export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
               </button>
             </div>
           )}
+          {pathname === '/archive' && (
+            <div className='d-flex gap-1'>
+              <button
+                className='btn btn-primary btn-float btn-icon'
+                onClick={() =>
+                  restoreNotesFromArchive(noteDetails, notesDispatch)
+                }
+              >
+                <i className='fa-solid fa-rotate-left btn-icon-size'></i>
+              </button>
+              <button
+                className='btn btn-primary btn-float btn-icon'
+                onClick={() => deleteNotesFromArchive(_id, notesDispatch)}
+              >
+                <i className='fa-solid fa-trash btn-icon-size'></i>
+              </button>
+            </div>
+          )}
           {pathname === '/trash' && (
             <div className='d-flex gap-1'>
               <button
@@ -97,7 +123,7 @@ export const Notecard = ({ noteDetails, setToggleNewNoteCard }) => {
                   restoreNotesFromTrash(noteDetails, notesDispatch)
                 }
               >
-                <i class='fa-solid fa-rotate-left btn-icon-size'></i>
+                <i className='fa-solid fa-rotate-left btn-icon-size'></i>
               </button>
               <button
                 className='btn btn-primary btn-float btn-icon'

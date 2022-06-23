@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Notecard, Sidebar } from '../../components'
 import { useAuth, useNotes } from '../../context'
-import { useLocation } from 'react-router-dom'
 
 export const Trash = () => {
   const { authState } = useAuth()
